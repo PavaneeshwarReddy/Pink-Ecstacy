@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/responsiveness/mobile_screen_layout.dart';
+import 'package:instagram/responsiveness/responsiveness.dart';
+import 'package:instagram/responsiveness/web_screen_layout.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,11 +19,7 @@ class _MyAppState extends State<MyApp> {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "instagram clone",
-      home: Scaffold(
-        body: Center(
-          child: Text("Hello world",style: TextStyle(fontSize: 24),),
-        ),
-      ),
+      home:Responsiveness(mobileScreenLayout:MobileScreenLayout() ,webScreenLayout: WebScreenLayout(),) ,
     );
   }
 }
