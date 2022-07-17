@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "991407520271",
+    "project_id": "pinkecstacy",
+    "storage_bucket": "pinkecstacy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991407520271:android:bba6d1231581744e37417a",
+        "android_client_info": {
+          "package_name": "com.example.instagram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991407520271-rt3oai25hiiip0lobb6tv3mhg1ijaa8s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoGXB33OXsLPwTDfzjAt46gjzvBUn9K5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991407520271-rt3oai25hiiip0lobb6tv3mhg1ijaa8s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

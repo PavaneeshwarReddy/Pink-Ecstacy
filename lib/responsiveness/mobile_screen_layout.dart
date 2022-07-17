@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class MobileScreenLayout extends StatefulWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
 
@@ -11,8 +10,9 @@ class MobileScreenLayout extends StatefulWidget {
 class _MobileScreenLayoutState extends State<MobileScreenLayout> {
   @override
   Widget build(BuildContext context) {
-     return Container(
-      child:Text("This is Mobile")
-     );
+    return const Scaffold(
+        body: Center(
+      child: Text("This is Mobile"),
+    ));
   }
 }
