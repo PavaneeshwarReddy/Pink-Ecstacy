@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/utitlities/colors.dart';
 
 class InputSpaceField extends StatelessWidget {
   final TextEditingController texteditingcontroller;
@@ -11,18 +12,28 @@ class InputSpaceField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final inputborder = OutlineInputBorder(
-      borderSide: Divider.createBorderSide(context)
+      borderRadius: BorderRadius.circular(50),
+      borderSide:const  BorderSide(
+        width: 1,
+        color: Color.fromARGB(255, 255, 255, 255)
+      )
     );
      return TextField(
-         
+        
        decoration: InputDecoration(
-        hintText: hinttext,
+        
+      
         focusedBorder: inputborder,
         border: inputborder,
         enabledBorder: inputborder,
+         hintText: hinttext,
+         prefixIcon: Icon(isPass?Icons.password:Icons.email)
+         
+        
        ),
        obscureText: isPass,
        keyboardType: textinputtype,
+       
 
      );
   }
