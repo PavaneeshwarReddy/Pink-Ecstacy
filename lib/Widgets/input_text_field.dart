@@ -19,7 +19,7 @@ class InputSpaceField extends StatelessWidget {
       )
     );
      return TextField(
-        
+        controller: texteditingcontroller,
        decoration: InputDecoration(
         
       
@@ -27,7 +27,7 @@ class InputSpaceField extends StatelessWidget {
         border: inputborder,
         enabledBorder: inputborder,
          hintText: hinttext,
-         prefixIcon: Icon(isPass?Icons.password:Icons.email)
+         
          
         
        ),

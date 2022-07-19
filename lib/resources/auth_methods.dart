@@ -14,12 +14,12 @@ class AuthMethods {
     required String password,
     required String username,
     required String bio,
-    required Uint8List file,//this is for images storage we use firebase storage
+    //required Uint8List file,//this is for images storage we use firebase storage
   })  async {
 
     String res ="Some error occured";
     try{
-      if(email.isNotEmpty||password.isNotEmpty||bio.isNotEmpty||file.isNotEmpty||username.isNotEmpty)
+      if(email.isNotEmpty||password.isNotEmpty||bio.isNotEmpty||username.isNotEmpty)
       {
         //register user in email authentication
         //here if we remove await we get an error, related to two different types cannot be equal, this is due to auth require time to return the required one
@@ -33,6 +33,7 @@ class AuthMethods {
             'uid':cred.user!.uid,
             'email':email,
             'bio':bio,
+            'admin':false,
             'followers':[],
             'following':[]
        });
