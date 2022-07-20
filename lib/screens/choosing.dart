@@ -12,28 +12,33 @@ class DecideScreen extends StatefulWidget {
 class _DecideScreenState extends State<DecideScreen> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        InkWell(
-                child: Text("Login Screen"),
-                onTap: (){
-                  Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const LoginScreen()),
-            );
-                },
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InkWell(
+                  
+                    child: Text("Login Screen"),
+                    onTap: (){
+                      Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                );
+                    },
+            ),
+             InkWell(
+                    child: Text("Registration Screen"),
+                    onTap: (){
+                      Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const RegisterScreen()),
+                );
+                    },
+            )
+          ],
         ),
-         InkWell(
-                child: Text("Login Screen"),
-                onTap: (){
-                  Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const RegisterScreen()),
-            );
-                },
-        )
-      ],
+      ),
     );
   }
 }

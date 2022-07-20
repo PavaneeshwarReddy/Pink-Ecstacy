@@ -19,7 +19,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _password = TextEditingController();
   final TextEditingController _username = TextEditingController();
   final TextEditingController _bio = TextEditingController();
-  Uint8List?_image;
+  Uint8List? _image;
 
   void SelectImage() async
   {
@@ -42,7 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return SafeArea(
       child: Scaffold(
           resizeToAvoidBottomInset:
-              false, //best to avoid screen and keyboard misplace errors
+              true, //best to avoid screen and keyboard misplace errors
           body: Stack(
             children: [
               Positioned(
@@ -59,19 +59,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   backgroundColor: bubble_red,
                 ),
               ),
-              Positioned(
-                bottom: -MediaQuery.of(context).size.height * (1.5),
-                child: CircleAvatar(
-                  radius: MediaQuery.of(context).size.width * (2),
-                  backgroundColor: bubble_blue,
-                ),
-              ),
+              
               Positioned(
                 top: -MediaQuery.of(context).size.height * (1),
                 left: -MediaQuery.of(context).size.height * (0.3),
                 child: CircleAvatar(
                   radius: MediaQuery.of(context).size.width * (1.4),
                   backgroundColor: bubble_green,
+                ),
+              ),
+              Positioned(
+                bottom: -MediaQuery.of(context).size.height * (1.5),
+                child: CircleAvatar(
+                  radius: MediaQuery.of(context).size.width * (2),
+                  backgroundColor: bubble_blue,
                 ),
               ),
               Center(
@@ -157,7 +158,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               backgroundColor: Colors.white,
                               child: IconButton(
                                 onPressed: () async {
-                                 String signUperror = await AuthMethods().signUpUser(email: _email.text, password: _password.text, username: _username.text, bio: _bio.text);
+                                 String signUperror = await AuthMethods().signUpUser(email: _email.text, password: _password.text, username: _username.text, bio: _bio.text, file: _image!);
                                  print(signUperror);
                                 },
                                 icon: const Icon(
