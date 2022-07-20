@@ -1,7 +1,11 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:instagram/Widgets/input_text_field.dart';
 import 'package:instagram/resources/auth_methods.dart';
 import 'package:instagram/utitlities/colors.dart';
+import 'package:instagram/utitlities/image_picker.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -15,6 +19,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _password = TextEditingController();
   final TextEditingController _username = TextEditingController();
   final TextEditingController _bio = TextEditingController();
+  Uint8List?_image;
+
+  void SelectImage() async
+  {
+      Uint8List im = await pickImage(ImageSource.gallery);
+      setState(() {
+            _image = im;
+      });
+  }
+
+  @override
+  void dispose() {
+    _email.dispose();
+    _password.dispose();
+    _username.dispose();
+    _bio.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -74,7 +96,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         Stack(
                           children: [
-                            CircleAvatar(
+                           _image!=null? CircleAvatar(
+                              radius: MediaQuery.of(context).size.width * (0.2),
+                              backgroundImage: MemoryImage(_image!),
+                            ):CircleAvatar(
                               radius: MediaQuery.of(context).size.width * (0.2),
                               backgroundColor: Colors.white,
                             ),
@@ -82,9 +107,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               bottom: 0,
                               right: 0,
                               child: IconButton(
-                                onPressed: () {
-                                  print("Add photo is clicked");
-                                },
+                                onPressed:SelectImage,
                                 icon: const Icon(Icons.add_a_photo_sharp,color: text_color_dark,),
                               ),
                             )
@@ -131,7 +154,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             CircleAvatar(
                               // ignore: sort_child_properties_last
 
-                              backgroundColor: bubble_red,
+                              backgroundColor: Colors.white,
                               child: IconButton(
                                 onPressed: () async {
                                  String signUperror = await AuthMethods().signUpUser(email: _email.text, password: _password.text, username: _username.text, bio: _bio.text);
@@ -139,7 +162,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 },
                                 icon: const Icon(
                                   Icons.arrow_forward,
-                                  color: Colors.white,
+                                  color: Color.fromARGB(255, 104, 104, 104),
                                 ),
                               ),
                             )
