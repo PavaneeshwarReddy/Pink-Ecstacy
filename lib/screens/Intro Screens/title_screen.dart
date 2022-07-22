@@ -18,7 +18,7 @@ class _TitleScreenIntroState extends State<TitleScreenIntro> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body: SafeArea(
           child: Stack(
             

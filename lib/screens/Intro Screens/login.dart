@@ -24,18 +24,10 @@ class _LoginIntroScreenState extends State<LoginIntroScreen> {
         const SizedBox(
               height: 12,
             ),
-            MaterialButton(
-              padding: EdgeInsets.all(15),
-              onPressed: () {
-                 Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginScreen()),
-                );
-              },
-              child: Text("Proceed to login"),
-              color: Color.fromARGB(255, 255, 255, 255),
-              shape:  RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*(0.2),
             ),
+          )
         ],
       )
     );

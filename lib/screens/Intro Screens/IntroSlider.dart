@@ -38,9 +38,10 @@ class _IntroSliderState extends State<IntroSlider> {
               });
             },
             children: const [
+              
               TitleScreenIntro(),
+               LoginIntroScreen(),
               CreateNewClub(),
-              LoginIntroScreen(),
               RegisterIntroScreen(),
             ],
           ),
