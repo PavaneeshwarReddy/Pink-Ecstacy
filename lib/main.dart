@@ -4,6 +4,7 @@ import 'package:instagram/responsiveness/mobile_screen_layout.dart';
 import 'package:instagram/responsiveness/responsiveness.dart';
 import 'package:instagram/responsiveness/web_screen_layout.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:instagram/screens/Intro%20Screens/IntroSlider.dart';
 import 'package:instagram/screens/choosing.dart';
 import 'package:instagram/screens/login_screen.dart';
 import 'package:instagram/screens/register_screen.dart';
@@ -42,7 +43,7 @@ class _MyAppState extends State<MyApp> {
       //   mobileScreenLayout: MobileScreenLayout(),
       //   webScreenLayout: WebScreenLayout(),
       // ),
-      home: DecideScreen(),
+      home: IntroSlider(),
     );
   }
 }
