@@ -6,6 +6,7 @@ import 'package:instagram/Widgets/input_text_field.dart';
 import 'package:instagram/resources/auth_methods.dart';
 import 'package:instagram/utitlities/colors.dart';
 import 'package:instagram/utitlities/image_picker.dart';
+import 'package:lottie/lottie.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -41,40 +42,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: bubble_blue,
           resizeToAvoidBottomInset:
               true, //best to avoid screen and keyboard misplace errors
           body: Stack(
+            
             children: [
-              Positioned(
-                top: MediaQuery.of(context).size.height * (0),
-                child: CircleAvatar(
-                  radius: MediaQuery.of(context).size.width * (2),
-                  backgroundColor: bubble_orange,
-                ),
-              ),
-              Positioned(
-                right: MediaQuery.of(context).size.height * (0),
-                child: CircleAvatar(
-                  radius: MediaQuery.of(context).size.width * (2),
-                  backgroundColor: bubble_red,
-                ),
-              ),
-              
-              Positioned(
-                top: -MediaQuery.of(context).size.height * (1),
-                left: -MediaQuery.of(context).size.height * (0.3),
-                child: CircleAvatar(
-                  radius: MediaQuery.of(context).size.width * (1.4),
-                  backgroundColor: bubble_green,
-                ),
-              ),
-              Positioned(
-                bottom: -MediaQuery.of(context).size.height * (1.5),
-                child: CircleAvatar(
-                  radius: MediaQuery.of(context).size.width * (2),
-                  backgroundColor: bubble_blue,
-                ),
-              ),
+             Container(
+              alignment: Alignment.topCenter,
+              child:Lottie.network("https://assets8.lottiefiles.com/packages/lf20_ucbyrun5.json")
+             ),
               Center(
                 child: Container(
                   margin: EdgeInsets.symmetric(
@@ -84,17 +61,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Center(
-                            child: Text("Register:",
-                                style: TextStyle(
-                                    fontSize:
-                                        MediaQuery.of(context).size.width *
-                                            0.08,
-                                    color: const Color.fromARGB(
-                                        255, 99, 99, 99)))),
-                        const SizedBox(
-                          height: 12,
-                        ),
+                       
                         Stack(
                           children: [
                            _image!=null? CircleAvatar(

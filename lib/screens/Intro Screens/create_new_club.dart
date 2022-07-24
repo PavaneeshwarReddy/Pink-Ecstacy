@@ -18,7 +18,7 @@ class _CreateNewClubState extends State<CreateNewClub> {
           children: [
             Center(
               child: Lottie.network(
-                  "https://assets9.lottiefiles.com/packages/lf20_w5hernhv.json"),
+                  "https://assets7.lottiefiles.com/packages/lf20_vvtkfqbo.json"),
             ),
             const SizedBox(
               height: 12,

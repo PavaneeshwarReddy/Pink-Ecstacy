@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:instagram/responsiveness/mobile_screen_layout.dart';
 import 'package:instagram/responsiveness/responsiveness.dart';
 import 'package:instagram/responsiveness/web_screen_layout.dart';
@@ -36,7 +37,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
+      theme: ThemeData(
+        textTheme: TextTheme(bodyText2: GoogleFonts.indieFlower(),button: GoogleFonts.indieFlower(),caption: GoogleFonts.indieFlower(),headline1: GoogleFonts.indieFlower(),overline: GoogleFonts.indieFlower(),subtitle1: GoogleFonts.indieFlower(),subtitle2: GoogleFonts.indieFlower(),),
+      ),
       debugShowCheckedModeBanner: false,
       title: "instagram clone",
       // home: Responsiveness(

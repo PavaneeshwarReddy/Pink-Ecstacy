@@ -4,6 +4,8 @@ import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram/utitlities/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:instagram/resources/openUrl.dart';
 
 class TitleScreenIntro extends StatefulWidget {
   const TitleScreenIntro({Key? key}) : super(key: key);
@@ -15,6 +17,8 @@ class TitleScreenIntro extends StatefulWidget {
 class _TitleScreenIntroState extends State<TitleScreenIntro> {
   final _confetti = ConfettiController();
   bool isPlaying = false;
+
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -23,19 +27,17 @@ class _TitleScreenIntroState extends State<TitleScreenIntro> {
           child: Stack(
             
             children:[
-              Container(
-                child: Center(
-                  child: InkWell(
+              Center(
+                child: InkWell(
 
-                    child: Image.asset('images/V.png'),
-                      onTap: (){
-                    if(isPlaying)
-                    _confetti.stop();
-                    else
-                    _confetti.play();
-                    isPlaying!=isPlaying;
-                  },
-                  ),
+                  child: Image.asset('images/V.png'),
+                    onTap: (){
+                  if(isPlaying)
+                  _confetti.stop();
+                  else
+                  _confetti.play();
+                  isPlaying!=isPlaying;
+                },
                 ),
               ),
               Container(
@@ -60,11 +62,38 @@ class _TitleScreenIntroState extends State<TitleScreenIntro> {
               Container(
                 alignment: Alignment(0,0.90),
                 child: Text("Swipe",style: TextStyle(color: Colors.white),),
+              ),
+              Container(
+                width: double.infinity,
+                child: Column(
+                  
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                   
+                     Container(
+                  
+                  width: MediaQuery.of(context).size.width*(0.5),
+                  child: InkWell(
+
+                    child: Image.asset('images/An.png',),
+                      onTap:(){
+                         
+                      },
+                  ),
+                  
+                ),
+                 
+                  ],
+                ),
               )
+              
            
             ] 
           ),
         ),
       );
   }
+
+
 }

@@ -15,7 +15,7 @@ class _LoginIntroScreenState extends State<LoginIntroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bubble_pink,
+      backgroundColor: Color.fromARGB(255, 255, 128, 170),
       body: Column(
         children: [
           Center(
@@ -25,8 +25,11 @@ class _LoginIntroScreenState extends State<LoginIntroScreen> {
               height: 12,
             ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*(0.2),
+            padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*(0.1),
             ),
+            child: Text("Hi! this is Anki,\nfrom here on I will be your assistent,\nplease don't mind if I talk too much\nbecause I like you...",style: TextStyle(
+              fontSize: MediaQuery.of(context).size.height*(0.03),color: Color.fromARGB(255, 255, 255, 255)),),
+
           )
         ],
       )

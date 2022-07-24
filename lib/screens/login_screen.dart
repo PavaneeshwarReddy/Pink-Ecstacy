@@ -3,6 +3,7 @@ import 'package:instagram/Widgets/input_text_field.dart';
 import 'dart:ui';
 
 import 'package:instagram/utitlities/colors.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -33,21 +34,26 @@ class _LoginScreenState extends State<LoginScreen> {
               alignment: Alignment.topCenter,
               child: CircleAvatar(
                 radius: MediaQuery.of(context).size.height * (0.3),
-                backgroundColor: bubble_pink,
+                backgroundColor: Colors.transparent,
                 child: Container(
                     padding: EdgeInsets.all(30),
-                    child: Text(
-                        "''You only live once, but if you do it right, once is enough.''",
-                        style: TextStyle(
-                            fontSize:
-                                MediaQuery.of(context).size.width * 0.08,color:const Color.fromARGB(255, 255, 255, 255)))),
+                    child: Lottie.network(
+                        "https://assets3.lottiefiles.com/private_files/lf30_fw6h59eu.json")),
               ),
             ),
             Container(
               alignment: Alignment.bottomCenter,
-              child: CircleAvatar(
-                radius: MediaQuery.of(context).size.height * (0.25),
-                backgroundColor: bubble_blue,
+              child: Container(
+                width: MediaQuery.of(context).size.height * (0.5),
+                height: MediaQuery.of(context).size.height * (0.5),
+                
+                decoration: const BoxDecoration(
+                  borderRadius:  BorderRadius.only(
+                topLeft:  Radius.circular(40.0),
+                topRight:  Radius.circular(40.0),
+              ),
+                  color: bubble_blue
+                ),
                 child: Container(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * 0.1),
@@ -86,15 +92,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
-                        children:  [
-                           CircleAvatar(
+                        children: [
+                          CircleAvatar(
                             backgroundColor: bubble_red,
-                            child:  IconButton(
+                            child: IconButton(
                               icon: const Icon(Icons.arrow_forward),
                               color: Colors.white,
-                              onPressed:(){} ,
+                              onPressed: () {},
                             ),
-                           )
+                          )
                         ],
                       )
                     ],
